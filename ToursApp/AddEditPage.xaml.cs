@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ToursApp
 {
@@ -46,19 +38,29 @@ namespace ToursApp
             }
 
             if (_currentHotel.Id == 0)
-                ToursEntities.GetContext().Hotels.Add(_currentHotel);
-            
-            try
             {
+                ToursEntities.GetContext().Hotels.Add(new Hotel
+                {
+                    Name = NameHotel.Text,
+                    CountOfStars = Convert.ToInt32(CountStars.Text),
+                    Country = ComboCountries.SelectedItem as Country
+                });
                 ToursEntities.GetContext().SaveChanges();
-                MessageBox.Show("Информация сохранена");
-
             }
+            //if (_currenthotel.id == 0)
+            //    toursentities.getcontext().hotels.add(_currenthotel);
 
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
+            //try
+            //{
+            //    toursentities.getcontext().savechanges();
+            //    messagebox.show("информация сохранена");
+
+            //}
+
+            //catch (exception ex)
+            //{
+            //    messagebox.show(ex.message.tostring());
+            //}
 
         }
     }
