@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToursApp"
         mc:Ignorable="d"
-        Title="HotelsPage" Height="450" Width="800">
+        Title="HotelsPage" Height="450" Width="800" IsVisibleChanged="Page_IsVisibleChanged">
     <Grid>
         
         <Grid.RowDefinitions>
@@ -16,7 +16,7 @@
         <DataGrid x:Name="DgridHotels" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
             <DataGridTextColumn Header="Название отеля" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
-            <DataGridTextColumn Header="Количество звезд" Binding="{Binding CountryOfStars}" Width="150"></DataGridTextColumn>
+            <DataGridTextColumn Header="Количество звезд" Binding="{Binding CountOfStars}" Width="150"></DataGridTextColumn>
             <DataGridTextColumn Header="Страна" Binding="{Binding Country.Name}" Width="250"></DataGridTextColumn>
             
             <DataGridTemplateColumn Width="auto">
