@@ -42,7 +42,24 @@ namespace ToursApp
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
+            var hotelForRemoving = DgridHotels.SelectedItems.Cast<Hotel>().ToList();
 
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {hotelForRemoving.Count()} элементов?", "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    ToursEntities.GetContext().Hotels.RemoveRange(hotelForRemoving);
+                    ToursEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+
+                    DgridHotels.ItemsSource = ToursEntities.GetContext().Hotels.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
