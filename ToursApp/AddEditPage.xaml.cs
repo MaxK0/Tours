@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.IO;
 
 namespace ToursApp
 {
@@ -11,6 +12,9 @@ namespace ToursApp
     /// </summary>
     public partial class AddEditPage : Page
     {
+
+        public int HotelId { get; set; } = 3;
+
         private Hotel _currentHotel = new Hotel();
         public AddEditPage(Hotel selectedHotel)
         {
@@ -37,30 +41,28 @@ namespace ToursApp
                 return;
             }
 
+            
             if (_currentHotel.Id == 0)
             {
-                ToursEntities.GetContext().Hotels.Add(new Hotel
-                {
-                    Name = NameHotel.Text,
-                    CountOfStars = Convert.ToInt32(CountStars.Text),
-                    Country = ComboCountries.SelectedItem as Country
-                });
-                ToursEntities.GetContext().SaveChanges();
+                using (StreamReader sr = new StreamReader("HotelId.txt")) HotelId = int.Parse(sr.ReadLine());
+                using (StreamWriter sw = new StreamWriter("HotelId.txt", false)) sw.Write(HotelId + 1);
+                _currentHotel.Id = HotelId;
+                ToursEntities.GetContext().Hotels.Add(_currentHotel);
             }
-            //if (_currenthotel.id == 0)
-            //    toursentities.getcontext().hotels.add(_currenthotel);
 
-            //try
-            //{
-            //    toursentities.getcontext().savechanges();
-            //    messagebox.show("информация сохранена");
+                
 
-            //}
+            try
+            {
+                ToursEntities.GetContext().SaveChanges();
+                MessageBox.Show("информация сохранена");
 
-            //catch (exception ex)
-            //{
-            //    messagebox.show(ex.message.tostring());
-            //}
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }
