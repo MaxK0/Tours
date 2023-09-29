@@ -50,3 +50,5 @@ C:\Users\user\Desktop\erik i maks 2\ToursApp\Tours\ToursApp\obj\Debug\ToursApp.c
 C:\Users\user\Desktop\erik i maks 2\ToursApp\Tours\ToursApp\obj\Debug\ToursApp.csproj.CopyComplete
 C:\Users\user\Desktop\erik i maks 2\ToursApp\Tours\ToursApp\obj\Debug\ToursApp.exe
 C:\Users\user\Desktop\erik i maks 2\ToursApp\Tours\ToursApp\obj\Debug\ToursApp.pdb
+C:\Users\user\Desktop\erik i maks 2\ToursApp\Tours\ToursApp\obj\Debug\TourPage.g.cs
+C:\Users\user\Desktop\erik i maks 2\ToursApp\Tours\ToursApp\obj\Debug\TourPage.baml

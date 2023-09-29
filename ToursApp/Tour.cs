@@ -11,15 +11,19 @@ namespace ToursApp
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Tour
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tour()
         {
             this.Types = new HashSet<Type>();
+            this.Hotels = new HashSet<Hotel>();
         }
-    
+
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int TicketCount { get; set; }
         public string Name { get; set; }
@@ -27,8 +31,18 @@ namespace ToursApp
         public byte[] ImagePreview { get; set; }
         public decimal Price { get; set; }
         public bool IsActual { get; set; }
+        
+        public string ActualText
+        {
+            get
+            {
+                return (IsActual) ? "Актуален" : "Заверешен";
+            }
+
+        }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Type> Types { get; set; }
+        public virtual ICollection<Hotel> Hotels { get; set; }
     }
 }

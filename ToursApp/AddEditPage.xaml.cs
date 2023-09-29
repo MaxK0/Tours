@@ -13,7 +13,7 @@ namespace ToursApp
     public partial class AddEditPage : Page
     {
 
-        public int HotelId { get; set; } = 3;
+        public int HotelId { get; set; } = 31;
 
         private Hotel _currentHotel = new Hotel();
         public AddEditPage(Hotel selectedHotel)

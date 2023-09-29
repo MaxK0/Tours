@@ -13,7 +13,7 @@
             <RowDefinition Height="73"/>
             
         </Grid.RowDefinitions>
-        <DataGrid x:Name="DgridHotels" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid x:Name="DgridHotels" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,36" Grid.RowSpan="2">
             <DataGrid.Columns>
             <DataGridTextColumn Header="Название отеля" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
             <DataGridTextColumn Header="Количество звезд" Binding="{Binding CountOfStars}" Width="150"></DataGridTextColumn>
