@@ -27,7 +27,7 @@ namespace ToursWebAPI.Entities
     
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
-        public virtual DbSet<ResponseHotelComment> HotelComments { get; set; }
+        public virtual DbSet<HotelComment> HotelComments { get; set; }
         public virtual DbSet<HotelImage> HotelImages { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }

@@ -96,7 +96,6 @@ namespace ToursWebAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             db.HotelComments.Add(hotelComment);
             db.SaveChanges();
 

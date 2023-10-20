@@ -17,7 +17,7 @@ namespace ToursWebAPI.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Hotel()
         {
-            this.HotelComments = new HashSet<ResponseHotelComment>();
+            this.HotelComments = new HashSet<HotelComment>();
             this.HotelImages = new HashSet<HotelImage>();
         }
     
@@ -28,7 +28,7 @@ namespace ToursWebAPI.Entities
     
         public virtual Country Country { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ResponseHotelComment> HotelComments { get; set; }
+        public virtual ICollection<HotelComment> HotelComments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HotelImage> HotelImages { get; set; }
     }
