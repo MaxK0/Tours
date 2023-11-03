@@ -6,9 +6,9 @@
     </Key>
     <Property Name="Code" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Hotels" Relationship="Self.FK_Hotel_Country" FromRole="Country" ToRole="Hotel" />
+    <NavigationProperty Name="Hotels" Relationship="Self.FK_Hotel_Country" FromRole="Country" ToRole="com.example.toursmobileapp.Hotel" />
   </EntityType>
-  <EntityType Name="Hotel">
+  <EntityType Name="com.example.toursmobileapp.Hotel">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -16,9 +16,9 @@
     <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CountOfStars" Type="Int32" Nullable="false" />
     <Property Name="CountryCode" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Country" Relationship="Self.FK_Hotel_Country" FromRole="Hotel" ToRole="Country" />
-    <NavigationProperty Name="HotelComments" Relationship="Self.FK_HotelComment_Hotel" FromRole="Hotel" ToRole="HotelComment" />
-    <NavigationProperty Name="HotelImages" Relationship="Self.FK_HotelImage_Hotel" FromRole="Hotel" ToRole="HotelImage" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Hotel_Country" FromRole="com.example.toursmobileapp.Hotel" ToRole="Country" />
+    <NavigationProperty Name="HotelComments" Relationship="Self.FK_HotelComment_Hotel" FromRole="com.example.toursmobileapp.Hotel" ToRole="HotelComment" />
+    <NavigationProperty Name="HotelImages" Relationship="Self.FK_HotelImage_Hotel" FromRole="com.example.toursmobileapp.Hotel" ToRole="HotelImage" />
   </EntityType>
   <EntityType Name="HotelComment">
     <Key>
@@ -29,7 +29,7 @@
     <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Author" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Hotel" Relationship="Self.FK_HotelComment_Hotel" FromRole="HotelComment" ToRole="Hotel" />
+    <NavigationProperty Name="com.example.toursmobileapp.Hotel" Relationship="Self.FK_HotelComment_Hotel" FromRole="HotelComment" ToRole="com.example.toursmobileapp.Hotel" />
   </EntityType>
   <EntityType Name="HotelImage">
     <Key>
@@ -38,7 +38,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="HotelId" Type="Int32" Nullable="false" />
     <Property Name="ImageSource" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-    <NavigationProperty Name="Hotel" Relationship="Self.FK_HotelImage_Hotel" FromRole="HotelImage" ToRole="Hotel" />
+    <NavigationProperty Name="com.example.toursmobileapp.Hotel" Relationship="Self.FK_HotelImage_Hotel" FromRole="HotelImage" ToRole="com.example.toursmobileapp.Hotel" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -74,21 +74,21 @@
   </EntityType>
   <Association Name="FK_Hotel_Country">
     <End Role="Country" Type="Self.Country" Multiplicity="1" />
-    <End Role="Hotel" Type="Self.Hotel" Multiplicity="*" />
+    <End Role="com.example.toursmobileapp.Hotel" Type="Self.com.example.toursmobileapp.Hotel" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="Code" />
       </Principal>
-      <Dependent Role="Hotel">
+      <Dependent Role="com.example.toursmobileapp.Hotel">
         <PropertyRef Name="CountryCode" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HotelComment_Hotel">
-    <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+    <End Role="com.example.toursmobileapp.Hotel" Type="Self.com.example.toursmobileapp.Hotel" Multiplicity="1" />
     <End Role="HotelComment" Type="Self.HotelComment" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Hotel">
+      <Principal Role="com.example.toursmobileapp.Hotel">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="HotelComment">
@@ -97,10 +97,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HotelImage_Hotel">
-    <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+    <End Role="com.example.toursmobileapp.Hotel" Type="Self.com.example.toursmobileapp.Hotel" Multiplicity="1" />
     <End Role="HotelImage" Type="Self.HotelImage" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Hotel">
+      <Principal Role="com.example.toursmobileapp.Hotel">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="HotelImage">
@@ -114,7 +114,7 @@
   </Association>
   <EntityContainer Name="ToursEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Countries" EntityType="Self.Country" />
-    <EntitySet Name="Hotels" EntityType="Self.Hotel" />
+    <EntitySet Name="Hotels" EntityType="Self.com.example.toursmobileapp.Hotel" />
     <EntitySet Name="HotelComments" EntityType="Self.HotelComment" />
     <EntitySet Name="HotelImages" EntityType="Self.HotelImage" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
@@ -122,14 +122,14 @@
     <EntitySet Name="Types" EntityType="Self.Type" />
     <AssociationSet Name="FK_Hotel_Country" Association="Self.FK_Hotel_Country">
       <End Role="Country" EntitySet="Countries" />
-      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="com.example.toursmobileapp.Hotel" EntitySet="Hotels" />
     </AssociationSet>
     <AssociationSet Name="FK_HotelComment_Hotel" Association="Self.FK_HotelComment_Hotel">
-      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="com.example.toursmobileapp.Hotel" EntitySet="Hotels" />
       <End Role="HotelComment" EntitySet="HotelComments" />
     </AssociationSet>
     <AssociationSet Name="FK_HotelImage_Hotel" Association="Self.FK_HotelImage_Hotel">
-      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="com.example.toursmobileapp.Hotel" EntitySet="Hotels" />
       <End Role="HotelImage" EntitySet="HotelImages" />
     </AssociationSet>
     <AssociationSet Name="TypeOfTour" Association="Self.TypeOfTour">

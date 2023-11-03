@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="96f8726f4d5e4e6fa9d0cf609ef92520" Name="Diagram1" ZoomLevel="83">
         <EntityTypeShape EntityType="ToursModel.Country" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToursModel.Hotel" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToursModel.com.example.toursmobileapp.Hotel" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ToursModel.HotelComment" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ToursModel.HotelImage" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="ToursModel.sysdiagram" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />

@@ -10,8 +10,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Hotels">
-      <EntityTypeMapping TypeName="ToursModel.Hotel">
-        <MappingFragment StoreEntitySet="Hotel">
+      <EntityTypeMapping TypeName="ToursModel.com.example.toursmobileapp.Hotel">
+        <MappingFragment StoreEntitySet="com.example.toursmobileapp.Hotel">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="CountOfStars" ColumnName="CountOfStars" />

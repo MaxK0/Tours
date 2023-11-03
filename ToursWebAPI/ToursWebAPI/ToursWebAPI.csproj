@@ -179,7 +179,7 @@
     <Compile Include="Entities\Country.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Hotel.cs">
+    <Compile Include="Entities\com.example.toursmobileapp.Hotel.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\HotelComment.cs">

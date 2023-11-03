@@ -71,7 +71,7 @@
     <Compile Include="Country.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Hotel.cs">
+    <Compile Include="com.example.toursmobileapp.Hotel.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="HotelComment.cs">

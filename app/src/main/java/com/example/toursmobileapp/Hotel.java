@@ -1,8 +1,12 @@
+package com.example.toursmobileapp;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
@@ -27,7 +31,7 @@ public class Hotel implements Parcelable {
     }
 
     public static final Creator<Hotel> CREATOR = new Creator<Hotel>() {
-       // @Override
+        //@Override
         public Hotel CreateFromParcel(Parcel in) {
             return new Hotel(in);
         }
@@ -85,5 +89,7 @@ public class Hotel implements Parcelable {
     public void writeToParcel(@NonNull Parcel parcel, int i) {
 
     }
+
+
 }
 

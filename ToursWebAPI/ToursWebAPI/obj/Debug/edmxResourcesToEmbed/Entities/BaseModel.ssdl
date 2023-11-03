@@ -7,7 +7,7 @@
     <Property Name="Code" Type="nchar" MaxLength="2" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <EntityType Name="Hotel">
+  <EntityType Name="com.example.toursmobileapp.Hotel">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -80,21 +80,21 @@
         </EntityType>-->
   <Association Name="FK_Hotel_Country">
     <End Role="Country" Type="Self.Country" Multiplicity="1" />
-    <End Role="Hotel" Type="Self.Hotel" Multiplicity="*" />
+    <End Role="com.example.toursmobileapp.Hotel" Type="Self.com.example.toursmobileapp.Hotel" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="Code" />
       </Principal>
-      <Dependent Role="Hotel">
+      <Dependent Role="com.example.toursmobileapp.Hotel">
         <PropertyRef Name="CountryCode" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HotelComment_Hotel">
-    <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+    <End Role="com.example.toursmobileapp.Hotel" Type="Self.com.example.toursmobileapp.Hotel" Multiplicity="1" />
     <End Role="HotelComment" Type="Self.HotelComment" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Hotel">
+      <Principal Role="com.example.toursmobileapp.Hotel">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="HotelComment">
@@ -103,10 +103,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HotelImage_Hotel">
-    <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+    <End Role="com.example.toursmobileapp.Hotel" Type="Self.com.example.toursmobileapp.Hotel" Multiplicity="1" />
     <End Role="HotelImage" Type="Self.HotelImage" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Hotel">
+      <Principal Role="com.example.toursmobileapp.Hotel">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="HotelImage">
@@ -140,7 +140,7 @@
   </Association>
   <EntityContainer Name="Хранилище ToursModelContainer">
     <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="com.example.toursmobileapp.Hotel" EntityType="Self.com.example.toursmobileapp.Hotel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HotelComment" EntityType="Self.HotelComment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HotelImage" EntityType="Self.HotelImage" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -149,14 +149,14 @@
     <EntitySet Name="TypeOfTour" EntityType="Self.TypeOfTour" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Hotel_Country" Association="Self.FK_Hotel_Country">
       <End Role="Country" EntitySet="Country" />
-      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="com.example.toursmobileapp.Hotel" EntitySet="com.example.toursmobileapp.Hotel" />
     </AssociationSet>
     <AssociationSet Name="FK_HotelComment_Hotel" Association="Self.FK_HotelComment_Hotel">
-      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="com.example.toursmobileapp.Hotel" EntitySet="com.example.toursmobileapp.Hotel" />
       <End Role="HotelComment" EntitySet="HotelComment" />
     </AssociationSet>
     <AssociationSet Name="FK_HotelImage_Hotel" Association="Self.FK_HotelImage_Hotel">
-      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="com.example.toursmobileapp.Hotel" EntitySet="com.example.toursmobileapp.Hotel" />
       <End Role="HotelImage" EntitySet="HotelImage" />
     </AssociationSet>
     <AssociationSet Name="FK_TypeOfTour_Tour" Association="Self.FK_TypeOfTour_Tour">
