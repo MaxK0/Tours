@@ -46,3 +46,7 @@ C:\Users\user\Documents\ToursWebAPI\ToursWebAPI\obj\Debug\ToursWebAPI.csproj.Cor
 C:\Users\user\Documents\ToursWebAPI\ToursWebAPI\obj\Debug\ToursWebAPI.csproj.CopyComplete
 C:\Users\user\Documents\ToursWebAPI\ToursWebAPI\obj\Debug\ToursWebAPI.dll
 C:\Users\user\Documents\ToursWebAPI\ToursWebAPI\obj\Debug\ToursWebAPI.pdb
+C:\Users\user\Desktop\erik i maks 2\Tours\ToursWebAPI\ToursWebAPI\obj\Debug\ToursWebAPI.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\erik i maks 2\Tours\ToursWebAPI\ToursWebAPI\obj\Debug\ToursWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\erik i maks 2\Tours\ToursWebAPI\ToursWebAPI\obj\Debug\ToursWebAPI.dll
+C:\Users\user\Desktop\erik i maks 2\Tours\ToursWebAPI\ToursWebAPI\obj\Debug\ToursWebAPI.pdb
